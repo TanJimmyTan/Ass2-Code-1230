@@ -1,0 +1,51 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+
+body {
+	background: url("NYC Bitch.jpg");
+	color: #000000;
+	text-align:center;
+	font-family:Helvetica;
+	font-size:24px;
+	background-attachment: fixed;
+}
+
+p {
+	font-size:20px;
+	margin-left:300px;
+	margin-right:300px;
+}
+ h2 {
+    text-align: left;
+}
+
+footer {
+	position:fixed;
+	bottom:0;
+	font-size: 14px;
+	padding: 1%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+.topnav a:hover {
+	background-color: #001f3f;
+	color: #DDDDDD;
+}
