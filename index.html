@@ -9,7 +9,6 @@
 		<title>Story by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<script src='./data.js'></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -360,6 +359,7 @@
     <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+	<script src='./data.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
@@ -373,8 +373,10 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoidGFuamltbXl0YW4iLCJhIjoiY2pseWNqNzE1MGtmZjNrbng3Nm43NnVmciJ9.ZxE3WgCbbZ-OWJ5729Ks5g';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: [-74.50, 40], // starting position [lng, lat]
+    style: 'mapbox://styles/mapbox/bright-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+	pitch: 45,
+	bearing: -17.6,
     zoom: 9 // starting zoom
 });
 </script>
