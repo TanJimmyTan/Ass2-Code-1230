@@ -6,7 +6,7 @@
 <div class="topnav" id="myTopnav">
  <a href="index.html">Home</a>
  <a href="indexx.html">Info</a>
-
+ <a href="indexxx.html">3D Map</a>
 </div>	
 	
 	
@@ -38,30 +38,30 @@ var map = new mapboxgl.Map({
 });
 map.on('load', function() {
 	map.addLayer({
-		"id": "data",
-		"type": "fill-extrusion", 
-		"source": {
-			'type': 'geojson', 
-			'data': data
-		},
-			'paint': {
-				'fill-extrusion-color' : { 
-					'property': '2016', 
-					"stops":[
-						[0, 'white'],
-						[50, 'orange'] 
-					]
-				},
-				'fill-extrusion-height' : {
-					'property': 'Difference', 
-					"stops":[
-						[0.2, 0],
-						[1, 50000] 
-					]
-				},
-				'fill-extrusion-opacity': 1
-			} 
-	});
+        'id': '3d-buildings',
+        'source': 'composite',
+        'source-layer': 'building',
+        'filter': ['==', 'extrude', 'true'],
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+            'fill-extrusion-color': '#aaa',
+
+            // use an 'interpolate' expression to add a smooth transition effect to the
+            // buildings as the user zooms in
+            'fill-extrusion-height': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.05, ["get", "height"]
+            ],
+            'fill-extrusion-base': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.05, ["get", "min_height"]
+            ],
+            'fill-extrusion-opacity': .6
+        }
+    }, labelLayerId);
 });
 </script>
 
