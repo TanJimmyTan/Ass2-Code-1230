@@ -38,7 +38,7 @@ var map = new mapboxgl.Map({
 });
 map.on('load', function() {
 	map.addLayer({
-        'id': '3d-buildings',
+        'id': 'data',
         'source': 'composite',
         'source-layer': 'building',
         'filter': ['==', 'extrude', 'true'],
